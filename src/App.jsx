@@ -1,5 +1,7 @@
 ﻿import { useEffect, useState } from "react";
-import { FiCheck, FiX } from "react-icons/fi";import BoardIntro from "./components/boardIntro/index.jsx";
+import { FiCheck, FiX } from "react-icons/fi";
+import BackToTop from "./components/backToTop/index.jsx";
+import BoardIntro from "./components/boardIntro/index.jsx";
 import HowItWorks from "./components/howItWorks/index.jsx";
 import SiteFooter from "./components/siteFooter/index.jsx";
 import SiteHeader from "./components/siteHeader/index.jsx";
@@ -103,13 +105,18 @@ const App = () => {
                 <HowItWorks />
             </main>
             <SiteFooter />
+            <BackToTop />
             {notice ? (
                 <div className={styles.notice} role="status" aria-live="polite">
                     <span className={styles.noticeIcon} aria-hidden="true">
                         <FiCheck />
                     </span>
                     <p>{notice}</p>
-                    <button type="button" aria-label="Dismiss message" onClick={() => setNotice("")}>
+                    <button
+                        type="button"
+                        aria-label="Dismiss message"
+                        onClick={() => setNotice("")}
+                    >
                         <FiX aria-hidden="true" />
                     </button>
                 </div>
@@ -119,4 +126,3 @@ const App = () => {
 };
 
 export default App;
-

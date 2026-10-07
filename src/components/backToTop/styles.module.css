@@ -1,0 +1,39 @@
+﻿.backToTop {
+    position: fixed;
+    z-index: 30;
+    right: 22px;
+    bottom: 22px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 0 14px;
+    border: 1px solid var(--blue);
+    border-radius: 13px;
+    background: var(--blue);
+    box-shadow: 0 10px 28px rgba(24, 36, 61, 0.2);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    &:hover,
+    &:focus-visible {
+        border-color: var(--blue-dark);
+        box-shadow: 0 0 0 4px rgba(62, 85, 198, 0.17), 0 10px 28px rgba(24, 36, 61, 0.2);
+        outline: none;
+    }
+
+    @media (max-width: 600px) {
+        right: 16px;
+        bottom: 16px;
+        min-height: 43px;
+        padding: 0 12px;
+    }
+}
