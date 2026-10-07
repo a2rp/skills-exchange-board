@@ -35,9 +35,17 @@ const SkillBoard = ({
     const [requestListing, setRequestListing] = useState(null);
     const [createOpen, setCreateOpen] = useState(false);
 
-    const categories = ["All categories", ...new Set(listings.map((listing) => listing.category))];
-    const formats = ["Any meeting style", ...new Set(listings.map((listing) => listing.format))];
-    const matchCount = listings.filter((listing) => isGoodSwap(listing, currentMember)).length;
+    const categories = [
+        "All categories",
+        ...new Set(listings.map((listing) => listing.category)),
+    ];
+    const formats = [
+        "Any meeting style",
+        ...new Set(listings.map((listing) => listing.format)),
+    ];
+    const matchCount = listings.filter((listing) =>
+        isGoodSwap(listing, currentMember),
+    ).length;
     const searchValue = normalize(search);
 
     const visibleListings = listings
@@ -52,15 +60,20 @@ const SkillBoard = ({
             ]
                 .join(" ")
                 .toLowerCase();
-            const matchesSearch = !searchValue || searchText.includes(searchValue);
-            const matchesCategory = category === "All categories" || listing.category === category;
-            const matchesFormat = format === "Any meeting style" || listing.format === format;
+            const matchesSearch =
+                !searchValue || searchText.includes(searchValue);
+            const matchesCategory =
+                category === "All categories" || listing.category === category;
+            const matchesFormat =
+                format === "Any meeting style" || listing.format === format;
             const matchesView =
                 view === "all" ||
                 (view === "matches" && isGoodSwap(listing, currentMember)) ||
                 (view === "saved" && savedIds.includes(listing.id));
 
-            return matchesSearch && matchesCategory && matchesFormat && matchesView;
+            return (
+                matchesSearch && matchesCategory && matchesFormat && matchesView
+            );
         })
         .sort(
             (first, second) =>
@@ -103,16 +116,27 @@ const SkillBoard = ({
 
     return (
         <>
-            <section className={styles.board} id="exchange-board" aria-labelledby="board-title">
+            <section
+                className={styles.board}
+                id="exchange-board"
+                aria-labelledby="board-title"
+            >
                 <div className={styles.heading}>
                     <div>
-                        <p className={styles.label}>Northbank community board</p>
+                        <p className={styles.label}>
+                            Northbank community board
+                        </p>
                         <h2 id="board-title">Find a skill worth sharing.</h2>
                         <p className={styles.description}>
-                            Every card is a neighbor offering one lesson and looking for one in return.
+                            Every card is a neighbor offering one lesson and
+                            looking for one in return.
                         </p>
                     </div>
-                    <button className={styles.addButton} type="button" onClick={openCreateForm}>
+                    <button
+                        className={styles.addButton}
+                        type="button"
+                        onClick={openCreateForm}
+                    >
                         <FiPlus aria-hidden="true" />
                         Share a skill
                     </button>
@@ -121,7 +145,11 @@ const SkillBoard = ({
                 <div className={styles.layout}>
                     <div className={styles.main}>
                         <div className={styles.filters}>
-                            <div className={styles.tabs} role="tablist" aria-label="Skill list views">
+                            <div
+                                className={styles.tabs}
+                                role="tablist"
+                                aria-label="Skill list views"
+                            >
                                 {viewOptions.map((option) => {
                                     const count =
                                         option.id === "all"
@@ -132,7 +160,11 @@ const SkillBoard = ({
 
                                     return (
                                         <button
-                                            className={view === option.id ? styles.activeTab : styles.tab}
+                                            className={
+                                                view === option.id
+                                                    ? styles.activeTab
+                                                    : styles.tab
+                                            }
                                             id={`view-${option.id}`}
                                             key={option.id}
                                             type="button"
@@ -157,7 +189,9 @@ const SkillBoard = ({
                                             type="search"
                                             placeholder="Try pottery, Spanish, or a name"
                                             value={search}
-                                            onChange={(event) => setSearch(event.target.value)}
+                                            onChange={(event) =>
+                                                setSearch(event.target.value)
+                                            }
                                         />
                                         {search ? (
                                             <button
@@ -172,7 +206,12 @@ const SkillBoard = ({
                                 </label>
                                 <label className={styles.selectField}>
                                     <span>Category</span>
-                                    <select value={category} onChange={(event) => setCategory(event.target.value)}>
+                                    <select
+                                        value={category}
+                                        onChange={(event) =>
+                                            setCategory(event.target.value)
+                                        }
+                                    >
                                         {categories.map((item) => (
                                             <option key={item}>{item}</option>
                                         ))}
@@ -180,7 +219,12 @@ const SkillBoard = ({
                                 </label>
                                 <label className={styles.selectField}>
                                     <span>Meeting style</span>
-                                    <select value={format} onChange={(event) => setFormat(event.target.value)}>
+                                    <select
+                                        value={format}
+                                        onChange={(event) =>
+                                            setFormat(event.target.value)
+                                        }
+                                    >
                                         {formats.map((item) => (
                                             <option key={item}>{item}</option>
                                         ))}
@@ -191,11 +235,17 @@ const SkillBoard = ({
 
                         <div className={styles.resultsHeading}>
                             <div>
-                                <span className={styles.resultIcon} aria-hidden="true">
+                                <span
+                                    className={styles.resultIcon}
+                                    aria-hidden="true"
+                                >
                                     <FiFilter />
                                 </span>
                                 <strong id="result-count">
-                                    {visibleListings.length} {visibleListings.length === 1 ? "skill" : "skills"}
+                                    {visibleListings.length}{" "}
+                                    {visibleListings.length === 1
+                                        ? "skill"
+                                        : "skills"}
                                 </strong>
                                 <span>to explore</span>
                             </div>
@@ -214,21 +264,37 @@ const SkillBoard = ({
                                     <SkillCard
                                         key={listing.id}
                                         listing={listing}
-                                        isMatch={isGoodSwap(listing, currentMember)}
+                                        isMatch={isGoodSwap(
+                                            listing,
+                                            currentMember,
+                                        )}
                                         isSaved={savedIds.includes(listing.id)}
-                                        requestSent={sentRequestIds.includes(listing.id)}
+                                        requestSent={sentRequestIds.includes(
+                                            listing.id,
+                                        )}
                                         onRequest={openRequest}
                                         onToggleSaved={onToggleSaved}
                                     />
                                 ))}
                             </div>
                         ) : (
-                            <div className={styles.emptyState} id="skill-results" role="tabpanel" aria-labelledby={`view-${view}`}>
-                                <span className={styles.emptyIcon} aria-hidden="true">
+                            <div
+                                className={styles.emptyState}
+                                id="skill-results"
+                                role="tabpanel"
+                                aria-labelledby={`view-${view}`}
+                            >
+                                <span
+                                    className={styles.emptyIcon}
+                                    aria-hidden="true"
+                                >
                                     <FiSearch />
                                 </span>
                                 <h3>No skills found</h3>
-                                <p>Try another search, category, or meeting style.</p>
+                                <p>
+                                    Try another search, category, or meeting
+                                    style.
+                                </p>
                                 <button type="button" onClick={resetFilters}>
                                     Show all skills
                                 </button>
@@ -257,7 +323,10 @@ const SkillBoard = ({
                 />
             ) : null}
             {createOpen ? (
-                <CreateSkillModal onClose={closeCreateForm} onCreate={createListing} />
+                <CreateSkillModal
+                    onClose={closeCreateForm}
+                    onCreate={createListing}
+                />
             ) : null}
         </>
     );

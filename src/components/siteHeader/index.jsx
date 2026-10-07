@@ -42,7 +42,11 @@ const SiteHeader = () => {
     return (
         <header className={styles.siteHeader} ref={headerRef}>
             <div className={styles.inner}>
-                <a className={styles.brand} href="#top" aria-label="Skillloop home">
+                <a
+                    className={styles.brand}
+                    href="#top"
+                    aria-label="Skillloop home"
+                >
                     <span className={styles.brandIcon} aria-hidden="true">
                         <span />
                         <span />
@@ -85,7 +89,11 @@ const SiteHeader = () => {
                         aria-controls="site-navigation"
                         onClick={() => setMenuOpen((open) => !open)}
                     >
-                        {menuOpen ? <FaXmark aria-hidden="true" /> : <FaBars aria-hidden="true" />}
+                        {menuOpen ? (
+                            <FaXmark aria-hidden="true" />
+                        ) : (
+                            <FaBars aria-hidden="true" />
+                        )}
                     </button>
                 </div>
             </div>

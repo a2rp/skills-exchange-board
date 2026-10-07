@@ -68,7 +68,9 @@
         color: rgba(255, 255, 255, 0.72);
         font-size: 13px;
         font-weight: 700;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         &:hover,
         &:focus-visible {
@@ -99,7 +101,9 @@
         background: transparent;
         font-size: 12px;
         font-weight: 700;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         svg {
             width: 15px;

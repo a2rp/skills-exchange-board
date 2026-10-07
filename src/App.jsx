@@ -35,9 +35,15 @@ const writeList = (key, value) => {
 };
 
 const App = () => {
-    const [listings, setListings] = useState(() => readList(storageKeys.listings, skillListings));
-    const [savedIds, setSavedIds] = useState(() => readList(storageKeys.saved, []));
-    const [requests, setRequests] = useState(() => readList(storageKeys.requests, []));
+    const [listings, setListings] = useState(() =>
+        readList(storageKeys.listings, skillListings),
+    );
+    const [savedIds, setSavedIds] = useState(() =>
+        readList(storageKeys.saved, []),
+    );
+    const [requests, setRequests] = useState(() =>
+        readList(storageKeys.requests, []),
+    );
     const [notice, setNotice] = useState("");
     const sentRequestIds = requests.map((request) => request.listingId);
 
@@ -54,7 +60,11 @@ const App = () => {
         const nextListings = [listing, ...listings];
         setListings(nextListings);
         const saved = writeList(storageKeys.listings, nextListings);
-        setNotice(saved ? "Your skill is on the board." : "Your skill was added for this visit.");
+        setNotice(
+            saved
+                ? "Your skill is on the board."
+                : "Your skill was added for this visit.",
+        );
     };
 
     const toggleSaved = (listingId) => {
@@ -63,7 +73,11 @@ const App = () => {
             : [listingId, ...savedIds];
         setSavedIds(nextSaved);
         const saved = writeList(storageKeys.saved, nextSaved);
-        setNotice(saved ? "Saved skills are updated." : "Saved skills are updated for this visit.");
+        setNotice(
+            saved
+                ? "Saved skills are updated."
+                : "Saved skills are updated for this visit.",
+        );
     };
 
     const sendRequest = (listing, details) => {
@@ -84,14 +98,21 @@ const App = () => {
         ];
         setRequests(nextRequests);
         const saved = writeList(storageKeys.requests, nextRequests);
-        setNotice(saved ? `Your request to ${listing.name} was saved.` : "Your request was added for this visit.");
+        setNotice(
+            saved
+                ? `Your request to ${listing.name} was saved.`
+                : "Your request was added for this visit.",
+        );
     };
 
     return (
         <div className={styles.appShell} id="top">
             <SiteHeader />
             <main className={styles.pageContent}>
-                <BoardIntro skillCount={listings.length} memberCount={listings.length} />
+                <BoardIntro
+                    skillCount={listings.length}
+                    memberCount={listings.length}
+                />
                 <SkillBoard
                     listings={listings}
                     currentMember={currentMember}

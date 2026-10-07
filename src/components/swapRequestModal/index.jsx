@@ -25,7 +25,7 @@ const SwapRequestModal = ({ listing, currentMember, onClose, onSend }) => {
             }
 
             const focusable = dialogRef.current.querySelectorAll(
-                'button:not([disabled]), input:not([disabled]), textarea:not([disabled]), a[href]',
+                "button:not([disabled]), input:not([disabled]), textarea:not([disabled]), a[href]",
             );
             const first = focusable[0];
             const last = focusable[focusable.length - 1];
@@ -91,7 +91,11 @@ const SwapRequestModal = ({ listing, currentMember, onClose, onSend }) => {
                 <div className={styles.swapSummary}>
                     <div className={styles.member}>
                         <img
-                            src={import.meta.env.BASE_URL + "images/" + listing.photo}
+                            src={
+                                import.meta.env.BASE_URL +
+                                "images/" +
+                                listing.photo
+                            }
                             alt=""
                         />
                         <div>
@@ -107,7 +111,8 @@ const SwapRequestModal = ({ listing, currentMember, onClose, onSend }) => {
                 </div>
 
                 <p className={styles.description} id="request-description">
-                    Tell {listing.name.split(" ")[0]} what you can share in return.
+                    Tell {listing.name.split(" ")[0]} what you can share in
+                    return.
                 </p>
 
                 <form className={styles.form} onSubmit={submitRequest}>

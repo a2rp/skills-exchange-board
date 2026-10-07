@@ -60,7 +60,9 @@
         border-radius: 11px;
         background: #fff;
         color: var(--muted);
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         svg {
             width: 17px;
@@ -142,7 +144,9 @@
         color: var(--ink);
         font-size: 12px;
         font-weight: 800;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         &:hover,
         &:focus-visible {

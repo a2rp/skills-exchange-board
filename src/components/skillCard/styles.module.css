@@ -4,7 +4,9 @@
     border: 1px solid var(--line);
     border-radius: 22px;
     background: var(--paper);
-    transition: border-color 160ms ease, box-shadow 160ms ease;
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
 
     &:hover {
         border-color: rgba(62, 85, 198, 0.45);
@@ -66,7 +68,9 @@
         border-radius: 12px;
         background: rgba(255, 255, 255, 0.95);
         color: var(--ink);
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         svg {
             width: 16px;
@@ -249,7 +253,9 @@
         color: #fff;
         font-size: 12px;
         font-weight: 800;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         svg {
             width: 16px;

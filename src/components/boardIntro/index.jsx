@@ -11,8 +11,9 @@ const BoardIntro = ({ skillCount, memberCount }) => (
                 <span>Take one home.</span>
             </h1>
             <p className={styles.description}>
-                Share something you know, meet a neighbor, and learn a useful skill
-                in return. No money needed. Just a little time and curiosity.
+                Share something you know, meet a neighbor, and learn a useful
+                skill in return. No money needed. Just a little time and
+                curiosity.
             </p>
             <div className={styles.actions}>
                 <a className={styles.primaryLink} href="#exchange-board">
@@ -36,7 +37,10 @@ const BoardIntro = ({ skillCount, memberCount }) => (
             </div>
         </div>
 
-        <div className={styles.photoGrid} aria-label="Skills shared by neighbors">
+        <div
+            className={styles.photoGrid}
+            aria-label="Skills shared by neighbors"
+        >
             <figure className={styles.mainPhoto}>
                 <img
                     src={import.meta.env.BASE_URL + "images/salsa-swap.jpg"}
@@ -70,4 +74,3 @@ const BoardIntro = ({ skillCount, memberCount }) => (
 );
 
 export default BoardIntro;
-

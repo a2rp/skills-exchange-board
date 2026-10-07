@@ -41,7 +41,9 @@
         border: 1px solid rgba(255, 255, 255, 0.24);
         border-radius: 12px;
         background: rgba(255, 255, 255, 0.08);
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         img {
             width: 30px;
@@ -92,7 +94,9 @@
         border-radius: 8px;
         color: rgba(255, 255, 255, 0.75);
         font-size: 11px;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         svg {
             flex: 0 0 14px;
@@ -123,7 +127,9 @@
 
         a {
             border-bottom: 1px solid transparent;
-            transition: border-color 160ms ease, box-shadow 160ms ease;
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease;
 
             &:hover,
             &:focus-visible {

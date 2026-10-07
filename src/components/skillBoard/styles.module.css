@@ -46,7 +46,9 @@
         color: #fff;
         font-size: 12px;
         font-weight: 800;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         svg {
             width: 16px;
@@ -102,7 +104,9 @@
         color: var(--muted);
         font-size: 11px;
         font-weight: 800;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         span {
             display: grid;
@@ -137,7 +141,10 @@
 
     .filterFields {
         display: grid;
-        grid-template-columns: minmax(220px, 1fr) minmax(130px, 0.55fr) minmax(160px, 0.62fr);
+        grid-template-columns: minmax(220px, 1fr) minmax(130px, 0.55fr) minmax(
+                160px,
+                0.62fr
+            );
         align-items: end;
         gap: 10px;
     }
@@ -165,7 +172,9 @@
         border: 1px solid var(--line);
         border-radius: 10px;
         background: #fff;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         &:focus-within {
             border-color: var(--blue);
@@ -203,7 +212,9 @@
             border-radius: 7px;
             background: transparent;
             color: var(--muted);
-            transition: border-color 160ms ease, box-shadow 160ms ease;
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease;
 
             svg {
                 width: 13px;
@@ -328,7 +339,9 @@
             color: var(--blue-dark);
             font-size: 11px;
             font-weight: 800;
-            transition: border-color 160ms ease, box-shadow 160ms ease;
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease;
 
             &:hover,
             &:focus-visible {

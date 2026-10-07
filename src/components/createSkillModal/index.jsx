@@ -44,7 +44,7 @@ const CreateSkillModal = ({ onClose, onCreate }) => {
             }
 
             const focusable = dialogRef.current.querySelectorAll(
-                'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])',
+                "button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])",
             );
             const first = focusable[0];
             const last = focusable[focusable.length - 1];
@@ -105,8 +105,12 @@ const CreateSkillModal = ({ onClose, onCreate }) => {
                     <div>
                         <p className={styles.label}>Add to the board</p>
                         <h2 id="create-skill-title">Share a skill</h2>
-                        <p className={styles.description} id="create-skill-description">
-                            Tell the neighborhood what you can teach and what you hope to learn.
+                        <p
+                            className={styles.description}
+                            id="create-skill-description"
+                        >
+                            Tell the neighborhood what you can teach and what
+                            you hope to learn.
                         </p>
                     </div>
                     <button
@@ -167,7 +171,11 @@ const CreateSkillModal = ({ onClose, onCreate }) => {
                         </label>
                         <label className={styles.field}>
                             <span>Category</span>
-                            <select name="category" value={form.category} onChange={updateField}>
+                            <select
+                                name="category"
+                                value={form.category}
+                                onChange={updateField}
+                            >
                                 <option>Creative</option>
                                 <option>Home &amp; food</option>
                                 <option>Language</option>
@@ -179,7 +187,11 @@ const CreateSkillModal = ({ onClose, onCreate }) => {
                         </label>
                         <label className={styles.field}>
                             <span>Meeting style</span>
-                            <select name="format" value={form.format} onChange={updateField}>
+                            <select
+                                name="format"
+                                value={form.format}
+                                onChange={updateField}
+                            >
                                 <option>In person</option>
                                 <option>Online</option>
                                 <option>Online or in person</option>
@@ -196,9 +208,16 @@ const CreateSkillModal = ({ onClose, onCreate }) => {
                         </label>
                         <label className={styles.field}>
                             <span>Photo</span>
-                            <select name="photo" value={form.photo} onChange={updateField}>
+                            <select
+                                name="photo"
+                                value={form.photo}
+                                onChange={updateField}
+                            >
                                 {photoOptions.map((photo) => (
-                                    <option key={photo.value} value={photo.value}>
+                                    <option
+                                        key={photo.value}
+                                        value={photo.value}
+                                    >
                                         {photo.label}
                                     </option>
                                 ))}

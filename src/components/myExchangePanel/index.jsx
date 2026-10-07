@@ -8,7 +8,11 @@ const MyExchangePanel = ({
     onShowSaved,
     onShareSkill,
 }) => (
-    <aside className={styles.panel} id="your-card" aria-labelledby="my-exchange-title">
+    <aside
+        className={styles.panel}
+        id="your-card"
+        aria-labelledby="my-exchange-title"
+    >
         <div className={styles.panelHeader}>
             <span className={styles.icon} aria-hidden="true">
                 <FiRepeat />
@@ -45,13 +49,21 @@ const MyExchangePanel = ({
         </div>
 
         <div className={styles.actions}>
-            <button className={styles.savedButton} type="button" onClick={onShowSaved}>
+            <button
+                className={styles.savedButton}
+                type="button"
+                onClick={onShowSaved}
+            >
                 <FiBookmark aria-hidden="true" />
                 Saved skills
                 <span>{savedCount}</span>
                 <FiArrowRight aria-hidden="true" />
             </button>
-            <button className={styles.shareButton} type="button" onClick={onShareSkill}>
+            <button
+                className={styles.shareButton}
+                type="button"
+                onClick={onShareSkill}
+            >
                 <FiPlus aria-hidden="true" />
                 Add your skill
             </button>

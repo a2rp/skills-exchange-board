@@ -1,4 +1,10 @@
-﻿import { FiArrowUpRight, FiBookmark, FiCheck, FiMapPin, FiRepeat } from "react-icons/fi";
+﻿import {
+    FiArrowUpRight,
+    FiBookmark,
+    FiCheck,
+    FiMapPin,
+    FiRepeat,
+} from "react-icons/fi";
 import styles from "./styles.module.css";
 
 const SkillCard = ({
@@ -69,11 +75,15 @@ const SkillCard = ({
                     <FiMapPin aria-hidden="true" />
                     {listing.neighborhood}
                 </span>
-                <span className={styles.availability}>{listing.availability}</span>
+                <span className={styles.availability}>
+                    {listing.availability}
+                </span>
             </div>
 
             <button
-                className={requestSent ? styles.sentButton : styles.requestButton}
+                className={
+                    requestSent ? styles.sentButton : styles.requestButton
+                }
                 type="button"
                 disabled={requestSent}
                 onClick={() => onRequest(listing)}
