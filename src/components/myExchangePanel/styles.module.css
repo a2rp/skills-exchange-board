@@ -1,0 +1,211 @@
+﻿.panel {
+    position: sticky;
+    top: 98px;
+    align-self: start;
+    padding: 23px;
+    border: 1px solid #cbd78f;
+    border-radius: 22px;
+    background: var(--soft-lime);
+
+    .panelHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .icon {
+        display: grid;
+        width: 39px;
+        height: 39px;
+        place-items: center;
+        border: 1px solid rgba(24, 36, 61, 0.14);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.55);
+        color: var(--blue);
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .openLabel {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 6px 9px;
+        border: 1px solid #cad5a3;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, 0.65);
+        color: #52651b;
+        font-size: 10px;
+        font-weight: 800;
+
+        &::before {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #6d9d3d;
+            content: "";
+        }
+    }
+
+    .label {
+        color: var(--blue);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin-top: 9px;
+        color: var(--ink);
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: -0.055em;
+        line-height: 1.1;
+    }
+
+    .description {
+        margin-top: 9px;
+        color: #586548;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .skillList {
+        display: grid;
+        gap: 9px;
+        margin-top: 21px;
+    }
+
+    .canShare,
+    .wantToLearn {
+        display: grid;
+        gap: 3px;
+        padding: 12px;
+        border: 1px solid rgba(24, 36, 61, 0.12);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.57);
+
+        span {
+            color: #657245;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        strong {
+            color: var(--ink);
+            font-size: 13px;
+        }
+    }
+
+    .wantToLearn {
+        border-color: #d6d9f2;
+        background: #f4f5ff;
+
+        span {
+            color: var(--blue-dark);
+        }
+    }
+
+    .counts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 18px;
+        padding: 14px 0;
+        border-top: 1px solid rgba(24, 36, 61, 0.13);
+        border-bottom: 1px solid rgba(24, 36, 61, 0.13);
+
+        div {
+            display: grid;
+            gap: 1px;
+        }
+
+        strong {
+            color: var(--ink);
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        span {
+            color: #657245;
+            font-size: 10px;
+        }
+    }
+
+    .actions {
+        display: grid;
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .savedButton,
+    .shareButton {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 43px;
+        padding: 0 11px;
+        border: 1px solid rgba(24, 36, 61, 0.18);
+        border-radius: 11px;
+        background: rgba(255, 255, 255, 0.75);
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 800;
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(62, 85, 198, 0.13);
+            outline: none;
+        }
+    }
+
+    .savedButton {
+        span {
+            display: grid;
+            min-width: 21px;
+            height: 21px;
+            place-items: center;
+            margin-left: auto;
+            border-radius: 7px;
+            background: var(--soft-blue);
+            color: var(--blue-dark);
+            font-size: 10px;
+        }
+
+        svg:last-child {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    .shareButton {
+        justify-content: center;
+        border-color: var(--blue);
+        background: var(--blue);
+        color: #fff;
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--blue-dark);
+        }
+    }
+
+    @media (max-width: 900px) {
+        position: static;
+    }
+}
