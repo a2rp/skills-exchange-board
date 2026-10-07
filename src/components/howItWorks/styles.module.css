@@ -1,0 +1,98 @@
+﻿.howItWorks {
+    display: grid;
+    gap: 26px;
+    padding: clamp(26px, 4vw, 44px);
+    border: 1px solid var(--ink);
+    border-radius: 24px;
+    background: var(--ink);
+    color: #fff;
+
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+    }
+
+    .label {
+        color: var(--lime);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin-top: 7px;
+        color: #fff;
+        font-size: clamp(25px, 3.2vw, 39px);
+        font-weight: 800;
+        letter-spacing: -0.06em;
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .step {
+        display: grid;
+        align-content: start;
+        min-height: 185px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 17px;
+        background: rgba(255, 255, 255, 0.06);
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+
+        &:hover {
+            border-color: rgba(213, 239, 104, 0.65);
+            box-shadow: 0 0 0 3px rgba(213, 239, 104, 0.08);
+        }
+
+        h3 {
+            margin-top: 21px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            max-width: 280px;
+            margin-top: 7px;
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 12px;
+            line-height: 1.65;
+        }
+    }
+
+    .stepTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--lime);
+
+        span {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+        }
+
+        svg {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+    @media (max-width: 760px) {
+        .steps {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .step {
+            min-height: 150px;
+        }
+    }
+}

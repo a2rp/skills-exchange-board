@@ -1,4 +1,5 @@
 ﻿import BoardIntro from "./components/boardIntro/index.jsx";
+import HowItWorks from "./components/howItWorks/index.jsx";
 import SiteHeader from "./components/siteHeader/index.jsx";
 import { skillListings } from "./data/skillListings.js";
 import styles from "./App.module.css";
@@ -15,10 +16,7 @@ const App = () => (
                 <p className={styles.label}>The community board</p>
                 <h2>Find your next skill swap.</h2>
             </section>
-            <section className={styles.placeholder} id="how-it-works">
-                <p className={styles.label}>How it works</p>
-                <h2>Offer one skill. Learn another.</h2>
-            </section>
+            <HowItWorks />
         </main>
     </div>
 );
