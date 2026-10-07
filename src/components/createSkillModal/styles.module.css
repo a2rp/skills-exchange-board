@@ -1,0 +1,202 @@
+﻿.backdrop {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    padding: 24px;
+    background: rgba(15, 24, 46, 0.68);
+
+    .dialog {
+        width: min(100%, 720px);
+        max-height: min(92vh, 900px);
+        overflow-y: auto;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: var(--paper);
+        box-shadow: 0 28px 90px rgba(10, 16, 32, 0.25);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px 26px 19px;
+        border-bottom: 1px solid var(--line);
+
+        h2 {
+            margin-top: 5px;
+            color: var(--ink);
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+    }
+
+    .label {
+        color: var(--blue);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+    }
+
+    .description {
+        max-width: 540px;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    .closeButton {
+        display: grid;
+        flex: 0 0 38px;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        background: #fff;
+        color: var(--muted);
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+
+        svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(62, 85, 198, 0.13);
+            outline: none;
+        }
+    }
+
+    .form {
+        display: grid;
+        gap: 16px;
+        padding: 20px 26px 25px;
+    }
+
+    .fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .field {
+        display: grid;
+        gap: 6px;
+
+        span {
+            color: var(--ink);
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-height: 43px;
+            padding: 10px 11px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: #fff;
+            color: var(--ink);
+            font-size: 12px;
+
+            &:focus {
+                border-color: var(--blue);
+                outline: 3px solid rgba(62, 85, 198, 0.14);
+            }
+        }
+
+        textarea {
+            min-height: 78px;
+            line-height: 1.5;
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding-top: 3px;
+    }
+
+    .cancelButton,
+    .submitButton {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        min-height: 43px;
+        padding: 0 15px;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        background: #fff;
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 800;
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(62, 85, 198, 0.13);
+            outline: none;
+        }
+    }
+
+    .submitButton {
+        border-color: var(--blue);
+        background: var(--blue);
+        color: #fff;
+
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--blue-dark);
+        }
+    }
+
+    @media (max-width: 620px) {
+        place-items: end center;
+        padding: 10px;
+
+        .dialog {
+            max-height: calc(100dvh - 20px);
+            border-radius: 20px 20px 14px 14px;
+        }
+
+        .header {
+            padding: 20px 18px 15px;
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+        .form {
+            padding: 17px 18px 20px;
+        }
+
+        .fields {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 12px;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
