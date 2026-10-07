@@ -4,41 +4,88 @@
 
     .pageContent {
         display: grid;
-        gap: 42px;
+        gap: clamp(46px, 6vw, 76px);
         width: min(100% - 48px, 1320px);
         margin: 0 auto;
         padding: 112px 0 80px;
     }
 
-    .placeholder {
-        min-height: 220px;
-        padding: 38px;
-        border: 1px dashed var(--line);
-        border-radius: 24px;
-        background: var(--paper);
+    .notice {
+        position: fixed;
+        z-index: 110;
+        right: 22px;
+        bottom: 22px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: min(calc(100% - 32px), 360px);
+        min-height: 56px;
+        padding: 9px 11px;
+        border: 1px solid #bdcc7d;
+        border-radius: 14px;
+        background: #fbfdec;
+        box-shadow: 0 14px 36px rgba(24, 36, 61, 0.16);
+        color: var(--ink);
 
-        .label {
-            color: var(--blue);
+        p {
+            flex: 1;
             font-size: 12px;
             font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
         }
 
-        h2 {
-            margin-top: 10px;
-            color: var(--ink);
-            font-size: 34px;
-            font-weight: 800;
-            letter-spacing: -0.05em;
+        button {
+            display: grid;
+            flex: 0 0 31px;
+            width: 31px;
+            height: 31px;
+            place-items: center;
+            border: 1px solid transparent;
+            border-radius: 9px;
+            background: transparent;
+            color: var(--muted);
+            transition: border-color 160ms ease, box-shadow 160ms ease;
+
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            &:hover,
+            &:focus-visible {
+                border-color: var(--line);
+                box-shadow: 0 0 0 3px rgba(62, 85, 198, 0.1);
+                outline: none;
+            }
+        }
+    }
+
+    .noticeIcon {
+        display: grid;
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        border: 1px solid #d4e0a1;
+        border-radius: 10px;
+        background: var(--soft-lime);
+        color: #536d21;
+
+        svg {
+            width: 15px;
+            height: 15px;
         }
     }
 
     @media (max-width: 620px) {
         .pageContent {
             width: min(100% - 32px, 1320px);
-            gap: 26px;
+            gap: 38px;
             padding-top: 96px;
+        }
+
+        .notice {
+            right: 16px;
+            bottom: 16px;
         }
     }
 }
