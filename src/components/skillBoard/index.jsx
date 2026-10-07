@@ -223,7 +223,7 @@ const SkillBoard = ({
                                 ))}
                             </div>
                         ) : (
-                            <div className={styles.emptyState}>
+                            <div className={styles.emptyState} id="skill-results" role="tabpanel" aria-labelledby={`view-${view}`}>
                                 <span className={styles.emptyIcon} aria-hidden="true">
                                     <FiSearch />
                                 </span>
