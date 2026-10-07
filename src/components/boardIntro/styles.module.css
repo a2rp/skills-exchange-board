@@ -1,0 +1,311 @@
+﻿.intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1fr);
+    align-items: center;
+    gap: clamp(38px, 6vw, 92px);
+    min-height: 560px;
+    padding: clamp(34px, 5vw, 72px);
+    border: 1px solid #c5dc5b;
+    border-radius: 32px;
+    background: var(--lime);
+
+    .copy {
+        max-width: 580px;
+    }
+
+    .label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 11px;
+        border: 1px solid rgba(24, 36, 61, 0.18);
+        border-radius: 99px;
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .label::before {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--blue);
+        content: "";
+    }
+
+    h1 {
+        margin-top: 24px;
+        color: var(--ink);
+        font-size: clamp(48px, 6.2vw, 84px);
+        font-weight: 800;
+        letter-spacing: -0.075em;
+        line-height: 0.96;
+
+        span {
+            color: var(--blue);
+        }
+    }
+
+    .description {
+        max-width: 470px;
+        margin-top: 23px;
+        color: #3a4862;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .primaryLink,
+    .secondaryLink {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 17px;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        font-size: 13px;
+        font-weight: 800;
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    .primaryLink {
+        background: var(--blue);
+        color: #fff;
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--blue-dark);
+            box-shadow: 0 0 0 4px rgba(62, 85, 198, 0.18);
+        }
+    }
+
+    .secondaryLink {
+        border-color: rgba(24, 36, 61, 0.22);
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.4);
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--ink);
+            box-shadow: 0 0 0 3px rgba(24, 36, 61, 0.1);
+        }
+    }
+
+    .communityCount {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 43px;
+        color: var(--ink);
+        font-size: 13px;
+
+        strong {
+            font-weight: 800;
+        }
+
+        span:not(.countIcon) {
+            color: #55633c;
+            font-size: 12px;
+        }
+    }
+
+    .countIcon {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid rgba(24, 36, 61, 0.2);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.45);
+
+        svg {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+    .photoGrid {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(140px, 0.8fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 14px;
+        min-height: 390px;
+        padding-bottom: 20px;
+    }
+
+    .mainPhoto,
+    .smallPhoto {
+        position: relative;
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid rgba(24, 36, 61, 0.3);
+        border-radius: 18px;
+        background: var(--ink);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        figcaption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 30px 16px 16px;
+            color: #fff;
+            background: linear-gradient(transparent, rgba(17, 26, 46, 0.88));
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+
+    .mainPhoto {
+        grid-row: span 2;
+
+        figcaption {
+            display: grid;
+            gap: 3px;
+            padding: 48px 20px 19px;
+            font-size: 17px;
+
+            span {
+                color: var(--lime);
+                font-size: 10px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .smallPhoto {
+        figcaption {
+            padding: 25px 12px 11px;
+            font-size: 11px;
+        }
+    }
+
+    .swapNote {
+        position: absolute;
+        right: 16px;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        min-height: 42px;
+        padding: 0 13px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 800;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            color: var(--blue);
+        }
+    }
+
+    @media (max-width: 980px) {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: clamp(30px, 6vw, 58px);
+
+        .copy {
+            max-width: 720px;
+        }
+
+        .photoGrid {
+            min-height: 340px;
+        }
+    }
+
+    @media (max-width: 560px) {
+        min-height: 0;
+        gap: 28px;
+        padding: 28px 20px 32px;
+        border-radius: 23px;
+
+        .label {
+            font-size: 10px;
+        }
+
+        h1 {
+            margin-top: 19px;
+            font-size: clamp(43px, 12vw, 62px);
+        }
+
+        .description {
+            margin-top: 18px;
+            font-size: 15px;
+        }
+
+        .actions {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .primaryLink,
+        .secondaryLink {
+            width: 100%;
+        }
+
+        .communityCount {
+            margin-top: 30px;
+        }
+
+        .photoGrid {
+            grid-template-columns: minmax(0, 1fr) minmax(105px, 0.72fr);
+            grid-template-rows: 135px 135px;
+            gap: 9px;
+            min-height: 300px;
+            padding-bottom: 22px;
+        }
+
+        .mainPhoto,
+        .smallPhoto {
+            border-radius: 14px;
+        }
+
+        .mainPhoto figcaption {
+            padding: 38px 12px 12px;
+            font-size: 13px;
+        }
+
+        .smallPhoto figcaption {
+            padding: 22px 9px 9px;
+            font-size: 10px;
+        }
+
+        .swapNote {
+            right: 4px;
+            min-height: 37px;
+            font-size: 10px;
+        }
+    }
+}
