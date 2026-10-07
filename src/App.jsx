@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from "react";
-import { FiCheck, FiX } from "react-icons/fi";
-import BoardIntro from "./components/boardIntro/index.jsx";
+import { FiCheck, FiX } from "react-icons/fi";import BoardIntro from "./components/boardIntro/index.jsx";
 import HowItWorks from "./components/howItWorks/index.jsx";
+import SiteFooter from "./components/siteFooter/index.jsx";
 import SiteHeader from "./components/siteHeader/index.jsx";
 import SkillBoard from "./components/skillBoard/index.jsx";
 import { currentMember, skillListings } from "./data/skillListings.js";
@@ -102,6 +102,7 @@ const App = () => {
                 />
                 <HowItWorks />
             </main>
+            <SiteFooter />
             {notice ? (
                 <div className={styles.notice} role="status" aria-live="polite">
                     <span className={styles.noticeIcon} aria-hidden="true">
@@ -118,3 +119,4 @@ const App = () => {
 };
 
 export default App;
+
